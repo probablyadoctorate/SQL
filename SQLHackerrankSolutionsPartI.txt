@@ -57,3 +57,29 @@ select CITY,length(CITY) from STATION order by length(CITY) desc, CITY limit 1;
 
 18. Query the Name of any student in STUDENTS who scored higher than 75 Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
 18. select Name from STUDENTS where Marks > 75 order by RIGHT(NAME, 3), ID asc;
+
+19. Generate the following two result sets: 1. Query an alphabetically ordered list of all names in OCCUPATIONS, immediately followed by the first letter of each profession as a parenthetical (i.e.: enclosed in parentheses). For example: AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S)
+2. Query the number of ocurrences of each occupation in OCCUPATIONS. Sort the occurrences in ascending order, and output them in the following format:
+There are a total of [occupation_count] [occupation]s where [occupation_count] is the number of occurrences of an occupation in OCCUPATIONS and [occupation] is the lowercase occupation name. If more than one Occupation has the same [occupation_count], they should be ordered alphabetically.
+19. SELECT CONCAT(
+    Name,'(',upper(substring(occupation,1,1)),')'
+) FROM OCCUPATIONS
+ORDER BY Name;
+
+SELECT CONCAT(
+    "There are a total of",' ',COUNT(occupation),' ',
+    lower(occupation),'s',"."
+)  FROM OCCUPATIONS
+GROUP BY occupation
+ORDER BY COUNT(OCCUPATION) ASC;
+
+20. Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+Equilateral: It's a triangle with 3 sides of equal length.Isosceles: It's a triangle with 2 sides of equal length.Scalene: It's a triangle with 3 sides of differing lengths. Not A Triangle: The given values of A, B, and C don't form a triangle.
+20. SELECT
+  CASE 
+    WHEN A + B <= C or A + C <= B or B + C <= A THEN 'Not A Triangle'
+    WHEN A = B and B = C THEN 'Equilateral'
+    WHEN A = B or A = C or B = C THEN 'Isosceles'
+    WHEN A <> B and B <> C THEN 'Scalene'
+  END tuple
+FROM TRIANGLES;
