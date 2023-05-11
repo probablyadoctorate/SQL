@@ -42,3 +42,9 @@
 	3. Data manipulation language (DML) statements write new information or modify existing records in a relational database. For example, an application uses the INSERT command to store a new record in the database.
 	4. Database administrators use data control language (DCL) to manage or authorize database access for other users. For example, they can use the GRANT command to permit certain applications to manipulate one or more tables. 
 	5. The relational engine uses transaction control language (TCL) to automatically make database changes. For example, the database uses the ROLLBACK command to undo an erroneous transaction.
+	
+6. DDL, DML, and TCL commands.
+6. The SQL statements that can be used to specify the database schema make up DDL, or Data Definition Language. It is used to create and modify the structure of database objects in the database and only works with descriptions of the database schema. Although data cannot be created, modified, or deleted with DDL, database structures can. In most cases, a typical user shouldn't use these commands; instead, they should use an application to access the database. DDL commands list include:
+	
+
+
