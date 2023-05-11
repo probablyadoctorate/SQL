@@ -45,6 +45,10 @@
 	
 6. DDL, DML, and TCL commands.
 6. The SQL statements that can be used to specify the database schema make up DDL, or Data Definition Language. It is used to create and modify the structure of database objects in the database and only works with descriptions of the database schema. Although data cannot be created, modified, or deleted with DDL, database structures can. In most cases, a typical user shouldn't use these commands; instead, they should use an application to access the database. DDL commands list include:
-	
+	CREATE(like table, index, function, views, store procedure, and triggers), DROP, ALTER, TRUNCATE, COMMENT, RENAME
+The majority of SQL statements are part of the DML, or Data Manipulation Language, which is used to manipulate data that is present in databases. It is the part of the SQL statement in charge of managing database and data access. Essentially, DML statements and DCL statements belong together. It includes:
+	INSERT, UPDATE, DELETE, LOCK
+A group of tasks are combined into a single execution unit using transactions. Each transaction starts with a particular task and is completed once every activity in the group has been properly completed. The transaction fails if any of the tasks are unsuccessful. Therefore, there are only two outcomes for a transaction: success or failure. As a result, the following TCL commands are used to manage how a transaction is carried out:
+ROLLBACK, COMMIT, BEGIN, SAVEPOINT
 
 
